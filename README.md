@@ -69,3 +69,6 @@ Admin panelinde Kullanıcı İşlemleri bölümünde, adminlerin kullanıcı akt
 
 ![Admin Sayfası Görseli](Görseller/Admin_ekranı.png)
 
+![UserActionLog Tablosu - Transkripsiyon takip eden tablo](Görseller/UserActionLog-Tablosu.png)
+
+
