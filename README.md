@@ -62,3 +62,10 @@ Not: test-data klasörünün içinde örnek bir ses dosyası ve transcription.js
 Eksiklerim
 Kullanıcı İşlemleri (UserActionLog Tablosu):
 Admin panelinde Kullanıcı İşlemleri bölümünde, adminlerin kullanıcı aktivitelerini görüntüleyebileceği bir özellik olması istenmişti. Ancak, şu an UserActionLog tablosu ile ilgili bağlantılar düzgün çalıştıramıyorum. Bu nedenle, adminlerin kullanıcı işlemleri geçmişine erişim yok. MSSQL'de bulunan UserActionLog tablosunda tüm transkripsiyon düzenlemeleri görüntülenebiliyor ama bunu admin paneline aktarma konusunda sorun yaşadığım için bu kısım eksik.
+
+![Giriş Sayfası Görseli](Görseller/Giriş_ekranı.png)
+
+![Editör Sayfası Görseli](Görseller/Editör_ekranı.png)
+
+![Admin Sayfası Görseli](Görseller/Admin_ekranı.png)
+
