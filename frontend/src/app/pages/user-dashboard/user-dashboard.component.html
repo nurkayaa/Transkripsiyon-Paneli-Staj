@@ -1,0 +1,58 @@
+<div class="dashboard-container">
+  <h2>Hoş geldiniz!</h2>
+
+  <label>Rol Seçin:</label>
+  <select [(ngModel)]="selectedRole">
+    <option value="admin">Admin</option>
+    <option value="editor">Editör</option>
+  </select>
+
+  <div *ngIf="selectedRole === 'editor'">
+    <div class="audio-player" *ngIf="audioUrl">
+      <h4>Ses Dosyasını Dinle</h4>
+      <audio controls [src]="audioUrl"></audio>
+    </div>
+    
+    <h3>Transkripsiyon Düzenle</h3>
+    <textarea [(ngModel)]="transcriptionText" rows="5" placeholder="Buraya bir transkripsiyon örneği yaz..."></textarea>
+    <button (click)="saveTranscription()">Kaydet</button>
+
+  </div>
+
+  <div *ngIf="selectedRole === 'admin'" class="admin-logs">
+    <h3>Kullanıcı İşlemleri</h3>
+    <button 
+      style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: pointer;"
+      (click)="showUserLogs = !showUserLogs">
+      Kullanıcı İşlemleri Görüntüle
+    </button>
+
+    <div *ngIf="showUserLogs">
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <table *ngIf="logs.length > 0" class="log-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Kullanıcı</th>
+            <th>İşlem</th>
+            <th>Tarih</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of logs">
+            <td>{{ log.id }}</td>
+            <td>{{ log.userName }}</td>
+            <td>{{ log.action }}</td>
+            <td>{{ log.timestamp | date: 'short' }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p *ngIf="logs.length === 0">Henüz işlem kaydı yok.</p>
+    </div>
+  </div>
+
+  
+
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="audios.length === 0">Hiç ses dosyası yok.</div>
+<div *ngFor="let audio of audios">
+  <p>{{ audio.fileName }}</p>
+  <audio controls>
+    <source [src]="audio.filePath" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
